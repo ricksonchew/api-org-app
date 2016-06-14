@@ -41,6 +41,22 @@ and TODOs.
   8. The web app's UI should be accessible at [[http://localhost:3000]],
      while its API should be at [[http://localhost:3000/api]].
 
+* Questions
+
+  In your PR/patch email, please also answer these following questions:
+
+  - What design patterns did you use inside the application?
+  - What libraries did you use?
+    + Why did you use this library?
+    + Are there other libraries available?
+    + If yes, what made you choose this library over the others?
+  - What major challenges did you encounter when making the app?
+  - If you had more time, what additional features would you like to
+    add?
+
+  In addition, you may provide more information in your PR/patch email
+  that you would like us to know.
+
 * Notes
 
   - While our preference is Perl and JavaScript, you may use any
