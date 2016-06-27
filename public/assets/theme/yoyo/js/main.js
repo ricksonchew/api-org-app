@@ -1,0 +1,1 @@
+require(["jquery","notesController","todosController"],function(o,t,r){o("[data-controller]").each(function(n,e){var l=o(e).attr("data-controller").split("|");o.each(l,function(o,n){"notesController"==n?t():"todosController"==n&&r()})})});
