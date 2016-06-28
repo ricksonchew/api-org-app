@@ -53,14 +53,16 @@ Route::group(['middleware' => ['web']], function() {
     Route::post('todo-status/', ['as' => $namePrefix . '.todo-status', 'uses' => 'Yoyo\TodoController@todoStatus']);
 
     // API - YOYO_NOTES - CRUD
-    Route::get('api/yoyo/api-yoyo-notes/yoyo-notes', 'Api\YoyoNotesController@getYoyoNotes');
-    Route::put('api/yoyo/api-yoyo-notes/yoyo-notes', 'Api\YoyoNotesController@updateYoyoNotes');
-    Route::post('api/yoyo/api-yoyo-notes/yoyo-notes', 'Api\YoyoNotesController@insertYoyoNotes');
-    Route::delete('api/yoyo/api-yoyo-notes/yoyo-notes', 'Api\YoyoNotesController@deleteYoyoNotes');
+    $namePrefix = 'api.notes';
+    Route::get('api/yoyo/api-yoyo-notes/yoyo-notes', ['as' => $namePrefix . '.get', 'uses' => 'Api\YoyoNotesController@getYoyoNotes']);
+    Route::put('api/yoyo/api-yoyo-notes/yoyo-notes', ['as' => $namePrefix . '.update', 'uses' => 'Api\YoyoNotesController@updateYoyoNotes']);
+    Route::post('api/yoyo/api-yoyo-notes/yoyo-notes', ['as' => $namePrefix . '.insert', 'uses' => 'Api\YoyoNotesController@insertYoyoNotes']);
+    Route::delete('api/yoyo/api-yoyo-notes/yoyo-notes', ['as' => $namePrefix . '.delete', 'uses' => 'Api\YoyoNotesController@deleteYoyoNotes']);
 
     // API - YOYO_TODOS - CRUD
-    Route::get('api/yoyo/api-yoyo-todos/yoyo-todos', 'Api\YoyoTodosController@getYoyoTodos');
-    Route::put('api/yoyo/api-yoyo-todos/yoyo-todos', 'Api\YoyoTodosController@updateYoyoTodos');
-    Route::post('api/yoyo/api-yoyo-todos/yoyo-todos', 'Api\YoyoTodosController@insertYoyoTodos');
-    Route::delete('api/yoyo/api-yoyo-todos/yoyo-todos', 'Api\YoyoTodosController@deleteYoyoTodos');
+    $namePrefix = 'api.todo';
+    Route::get('api/yoyo/api-yoyo-todos/yoyo-todos', ['as' => $namePrefix . '.get', 'uses' => 'Api\YoyoTodosController@getYoyoTodos']);
+    Route::put('api/yoyo/api-yoyo-todos/yoyo-todos', ['as' => $namePrefix . '.update', 'uses' => 'Api\YoyoTodosController@updateYoyoTodos']);
+    Route::post('api/yoyo/api-yoyo-todos/yoyo-todos', ['as' => $namePrefix . '.insert', 'uses' => 'Api\YoyoTodosController@insertYoyoTodos']);
+    Route::delete('api/yoyo/api-yoyo-todos/yoyo-todos', ['as' => $namePrefix . '.delete', 'uses' => 'Api\YoyoTodosController@deleteYoyoTodos']);
 });
